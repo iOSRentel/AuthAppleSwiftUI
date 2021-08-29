@@ -62,10 +62,12 @@ struct SignInView: View {
 //MARK: - View
 
     var body: some View {
-        ZStack {
-            Color.white
-                .ignoresSafeArea()
+        
+        NavigationView {
             
+            ZStack {
+            
+            //MARK: - Apple button
         SignInWithAppleButton(
             onRequest: { request in
                 let nonce = randomNonceString()
@@ -115,12 +117,15 @@ struct SignInView: View {
         )
         .frame(width: 280, height: 45, alignment: .center)
         .padding(.init(top: 400, leading: 50, bottom: 20, trailing: 50))
-                }
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        }
     }
 }
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SignInView()
     }
 }
+

@@ -10,11 +10,11 @@ import Firebase
 
 @main
 struct AuthAppleSwiftUIApp: App {
-//MARK: - SignWithApple
+
     init() {
         FirebaseApp.configure()
     }
-//MARK:-
+
     var body: some Scene {
         WindowGroup {
             ContentView()
